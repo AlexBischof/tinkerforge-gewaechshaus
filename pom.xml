@@ -32,6 +32,12 @@
         </dependency>
 
         <dependency>
+            <groupId>de.bischinger.tinkerforge</groupId>
+            <artifactId>brickletreader</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.mapdb</groupId>
             <artifactId>mapdb</artifactId>
             <version>1.0.6</version>
@@ -42,4 +48,22 @@
             <version>2.0.1</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>babysnoozer.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
